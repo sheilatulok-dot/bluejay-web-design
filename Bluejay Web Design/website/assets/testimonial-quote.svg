@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title>Watercolor quote flourish</title>
+  <defs>
+    <radialGradient id="wash" cx="45%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#dcecff" stop-opacity=".95"/>
+      <stop offset="100%" stop-color="#f7fbff" stop-opacity=".18"/>
+    </radialGradient>
+    <linearGradient id="ink" x1="0%" y1="20%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#214f82"/>
+      <stop offset="100%" stop-color="#74b1f7"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#wash)" d="M18 24c10-14 33-18 49-8 15 9 21 29 12 45-9 17-30 25-48 18-17-7-28-28-22-45 2-4 5-8 9-10Z"/>
+  <path fill="none" stroke="#8fbef4" stroke-linecap="round" stroke-width="2.4" d="M15 76c17-9 33-10 51-1 6 3 11 4 17 3"/>
+  <path fill="none" stroke="#9cc6ef" stroke-linecap="round" stroke-width="1.9" d="M62 74c3-8 9-14 18-17M71 67c6 0 10-2 14-6"/>
+  <path fill="#8bb9e8" d="M73 62c5-5 10-7 15-6-3 5-8 8-15 6ZM63 72c2-6 6-10 11-12-1 6-5 10-11 12Z"/>
+  <path fill="url(#ink)" d="M28 35c-8 5-12 13-12 24 0 8 4 13 11 13 6 0 10-4 10-10 0-6-4-10-10-10h-2c1-5 4-9 9-12l-6-5Zm34 0c-8 5-12 13-12 24 0 8 4 13 11 13 6 0 10-4 10-10 0-6-4-10-10-10h-2c1-5 4-9 9-12l-6-5Z"/>
+</svg>
