@@ -140,6 +140,8 @@ img {
 }
 .brand-logo {
   width: min(650px, 52vw);
+  height: auto;
+  aspect-ratio: 440 / 162;
   display: block;
   object-fit: contain;
 }
@@ -2185,6 +2187,8 @@ img {
 }
 .portfolio-page .brand-logo-wrap a {
   display: block;
+  width: min(650px, 52vw);
+  aspect-ratio: 440 / 162;
 }
 .portfolio-page-hero {
   position: relative;
