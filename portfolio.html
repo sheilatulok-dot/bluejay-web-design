@@ -29,7 +29,8 @@
     <noscript>
       <link rel="stylesheet" href="https://use.typekit.net/grm7ofz.css" />
     </noscript>
-<link rel="stylesheet" href="css/portfolio.min.css" />
+<link rel="preload" as="image" href="assets/footer-feather.svg" type="image/svg+xml" fetchpriority="high" />
+    <link rel="stylesheet" href="css/portfolio.min.css" />
   </head>
   <body class="portfolio-page">
     <header class="brand-header">
@@ -266,11 +267,14 @@
             <div class="portfolio-project-visual">
               <img
                 class="portfolio-project-photo"
-                src="portfolio/dove-farms/assets/dove-farms-hero.webp"
+                src="portfolio/dove-farms/assets/dove-farms-portfolio-960.webp"
+                srcset="portfolio/dove-farms/assets/dove-farms-portfolio-640.webp 640w, portfolio/dove-farms/assets/dove-farms-portfolio-960.webp 960w"
+                sizes="(max-width: 767px) 100vw, (max-width: 1200px) 90vw, 960px"
+                width="960" height="540"
                 alt="Stone Dove Farms winery estate overlooking vineyard rows in golden evening light"
-              loading="lazy"
-                decoding="async"
-                />
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.removeAttribute('srcset');this.src='portfolio/dove-farms/assets/dove-farms-hero.webp'"
+              />
               <div class="portfolio-project-brand">
                 <img
                   src="portfolio/dove-farms/assets/dove-farms-logo-original.webp"
