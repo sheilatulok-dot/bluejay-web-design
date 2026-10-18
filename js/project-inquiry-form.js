@@ -91,7 +91,7 @@
       event.preventDefault();
       var subject = encodeURIComponent('Website Project Inquiry');
       var body = encodeURIComponent(buildEmailBody(formData));
-      window.location.href = 'mailto:sheila@webdesignbysheila-t.website?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:sheila@webdesignsbysheila.website?subject=' + subject + '&body=' + body;
       setStatus('Your email app should open with the inquiry details. Once the Google connection is ready, this form can submit directly.', 'is-success');
       return;
     }
