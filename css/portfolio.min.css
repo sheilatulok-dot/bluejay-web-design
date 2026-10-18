@@ -2,3 +2,9 @@ html{scroll-behavior:smooth}body{font-family:"oaks",Arial,sans-serif;font-size:1
 /* Portfolio typography: DM Sans for prose and buttons, Oaks for headings and navigation. */.portfolio-page{font-family:"DM Sans",Arial,sans-serif}.portfolio-page p,.portfolio-page dd,.portfolio-page li,.portfolio-page .portfolio-project-note,.portfolio-page .portfolio-project-facts,.portfolio-page .portfolio-clarity-card{font-family:"DM Sans",Arial,sans-serif}.portfolio-page h1,.portfolio-page h2,.portfolio-page h3,.portfolio-page h4,.portfolio-page h5,.portfolio-page h6,.portfolio-page .brand-title,.portfolio-page .storybook-nav,.portfolio-page .service-eyebrow{font-family:"oaks",Arial,sans-serif}.portfolio-page .btn{font-family:"DM Sans",Arial,sans-serif;font-weight:600;letter-spacing:.012em;line-height:1.4;text-align:center;text-wrap:balance}
 
 /* Typography clarity: avoid forced thin grayscale smoothing and increase paragraph contrast. */body{-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto}body p{color:#334155;line-height:1.65;letter-spacing:.003em}body .btn{letter-spacing:.008em}body h1,body h2,body h3,body .brand-title{text-rendering:optimizeLegibility}
+
+/* Portfolio header illustration: balanced focal point, no layout shift. */
+.portfolio-hero-art{position:relative;display:grid;place-items:center;margin:0 auto 1.1rem;width:min(100%,21rem);aspect-ratio:1 / 1;background:radial-gradient(circle at center,rgba(214,234,250,.85) 0%,rgba(244,249,254,.3) 69%,transparent 75%);border-radius:2rem}
+.portfolio-hero-art img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 14px 24px rgba(32,73,110,.12))}
+.portfolio-page-hero .portfolio-clarity-card{padding:1.35rem 1.5rem}
+@media(max-width:991.98px){.portfolio-hero-art{width:min(70vw,17rem)}.portfolio-page-hero .col-lg-4{display:grid;justify-items:center}.portfolio-page-hero .portfolio-clarity-card{width:min(100%,34rem)}}
