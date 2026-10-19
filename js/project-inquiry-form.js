@@ -59,14 +59,30 @@
     }
   }
 
-  if (responseFrame) {
-    responseFrame.addEventListener('load', function () {
-      if (!submissionPending) {
-        return;
-      }
+  // The hidden iframe loading is NOT proof the endpoint accepted an inquiry.
+  // Only the explicit response message can confirm success.
+  window.addEventListener('message', function (event) {
+    if (!submissionPending || !event.data ||
+        event.data.type !== 'bluejay-inquiry') return;
+    if (event.origin !== 'https://script.google.com' &&
+        event.origin !== 'https://script.googleusercontent.com' &&
+        event.origin !== 'https://webdesignsbysheila.website') return;
 
+    if (event.data.status === 'success') {
       setStatus('Thank you — your inquiry has been sent. I’ll be in touch soon.', 'is-success');
       form.reset();
+    } else {
+      setStatus('We could not confirm your inquiry. Please email sheila@webdesignsbysheila.website instead.', 'is-error');
+    }
+    finishSubmission();
+  });
+
+  if (responseFrame) {
+    responseFrame.addEventListener('load', function () {
+      if (!submissionPending) return;
+      // Apps Script sometimes loads a wrapper frame. Do not report success
+      // from an iframe load alone; await the explicit confirmation message.
+      setStatus('Waiting for confirmation. If this message remains, please email sheila@webdesignsbysheila.website.', 'is-error');
       finishSubmission();
     });
   }
