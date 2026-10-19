@@ -7,16 +7,16 @@
   var submitButtonText = submitButton ? submitButton.textContent : 'Send inquiry';
 
   var fields = {
-    firstName: 'entry.1584213641',
-    lastName: 'entry.140386484',
-    email: 'entry.835425953',
-    businessName: 'entry.2018019423',
-    websiteStage: 'entry.1243877280',
-    existingWebsite: 'entry.824268876',
-    timeline: 'entry.671129583',
-    budget: 'entry.1471166220',
-    services: 'entry.2117219581',
-    projectDetails: 'entry.1496300641'
+    firstName: 'entry.1294508782',
+    lastName: 'entry.2059081400',
+    email: 'entry.2108256210',
+    businessName: 'entry.1254787358',
+    websiteStage: 'entry.1662603164',
+    existingWebsite: 'entry.2088389215',
+    timeline: 'entry.98571016',
+    budget: 'entry.755074804',
+    services: 'entry.1198576406',
+    projectDetails: 'entry.449540681'
   };
 
   if (!form || !status) {
