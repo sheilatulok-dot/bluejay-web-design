@@ -4,6 +4,7 @@
   var responseFrame = document.querySelector('iframe[name="googleFormHiddenFrame"]');
   var submitButton = form ? form.querySelector('button[type="submit"]') : null;
   var submissionPending = false;
+  var confirmationTimer = null;
   var submitButtonText = submitButton ? submitButton.textContent : 'Send inquiry';
 
   var fields = {
@@ -51,6 +52,10 @@
   }
 
   function finishSubmission() {
+    if (confirmationTimer) {
+      clearTimeout(confirmationTimer);
+      confirmationTimer = null;
+    }
     submissionPending = false;
     form.removeAttribute('aria-busy');
     if (submitButton) {
@@ -77,15 +82,6 @@
     finishSubmission();
   });
 
-  if (responseFrame) {
-    responseFrame.addEventListener('load', function () {
-      if (!submissionPending) return;
-      // Apps Script sometimes loads a wrapper frame. Do not report success
-      // from an iframe load alone; await the explicit confirmation message.
-      setStatus('Waiting for confirmation. If this message remains, please email sheila@webdesignsbysheila.website.', 'is-error');
-      finishSubmission();
-    });
-  }
 
   form.addEventListener('submit', function (event) {
     var action = form.getAttribute('data-google-form-action') || form.getAttribute('action') || '';
@@ -114,6 +110,11 @@
 
     form.setAttribute('action', action);
     submissionPending = true;
+    confirmationTimer = setTimeout(function () {
+      if (!submissionPending) return;
+      setStatus('Could not confirm delivery. Please email sheila@webdesignsbysheila.website instead.', 'is-error');
+      finishSubmission();
+    }, 15000);
     form.setAttribute('aria-busy', 'true');
     setStatus('Sending your inquiry…');
     if (submitButton) {
